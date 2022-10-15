@@ -1,38 +1,156 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #282c34;
+} 
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Outermost container */
+.app {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: var(--primary-color);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+}
+
+.wrapper {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  width: 40%;
+  text-align: center;
+
+}
+
+#quote-box {
+  color: var(--primary-color);
+  font-weight: 500;
+  background-color: #fff;
+  color: var(--primary-color);
+  padding: 15px; /* Play around with this */
+  border-radius: 5px;
+}
+
+#text {
+  padding: 5px 10px 5px 10px;
+  margin: 3px 3px 10px 3px;
+  font-size: 1.8rem;
+  /* background-color: green; */
+}
+
+#author {
+  padding: 3px 10px 5px 10px;
+  margin: 3px 3px 20px 3px;
+  font-size: 1.1rem;
+  text-align: right;
+  /* background-color: teal; */
+}
+
+/* Social media and controller button */
+.social-plus-controller {
+  /* background-color: green; To delete */
+  padding: 5px 20px 5px 20px;
+  margin: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social {
+  display: flex;
+}
+
+.social div, .controller div {
+  padding: 0px; /* Alter to see clearly e.g. 3px; */
+  /* border: 1px solid orange; To delete */
+}
+
+/* Buttton elements */
+#tweet-btn, #new-quote {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  /* border: 1px solid red; To delete */
+}
+
+#tweet-btn:hover, #new-quote:hover {
+  border: none;
+  outline: none;
+  opacity: 0.8;
+}
+
+#tweet-quote {
+  color: #fff;
+}
+/* Footer section */
+footer {
+  font-size: 0.9rem;
+  padding: 10px;
+  background-color: var(--primary-color);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+footer a {
+  text-decoration: none;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive design */
+@media screen and (max-width: 1025px) {
+  .wrapper {
+    width: 70%;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .wrapper {
+    width: 95%;
+    text-align: center;
+  }
+  #quote-box {
+    padding: 10px;
+  }
+  #text {
+    padding: 0px;
+    margin: 1px;
+    font-size: 1.1rem;
+  }
+  #author {
+    font-size: .9rem;
+  }
+/* Buttton elements */
+  #tweet-btn,
+  #new-quote {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+  }
+  footer {
+    font-size: 0.8rem;
   }
 }
