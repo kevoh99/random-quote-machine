@@ -24,6 +24,10 @@ const COLORS = [
   '#4b2ca3',
   '#f87fa0',
   '#42b883',
+  '#5cebdf',
+  '#4b9bbe',
+  '#00adf2',
+  '#031b4e',
   '#f08080',
   '#FF5733',
   '#20b2aa',
@@ -112,7 +116,11 @@ const App = () => {
     setCurrentColor(
       COLORS[Math.floor(Math.random() * COLORS.length)]
     )
-    /* Note that we are not making a call to the API using the getQuote function. This is because a change in currentColor triggers the useEffect, which in turn changes the --primary-color (for bg and text) and then makes a call to the getQuote function. */
+    /* Note that we are not making a call to the API using
+    the getQuote function. This is because a change in
+    currentColor triggers the useEffect, which in turn
+    changes the --primary-color (for bg and text) and
+    then makes a call to the getQuote function. */
   }
 
   return isLoading ? (
@@ -157,7 +165,7 @@ const App = () => {
                     href={'https://twitter.com/intent/tweet?hashtags=quotes&text="' + quote + '" ' + author}
                     target='_blank'
                     title='Tweet this quote'
-                    rel='noreferrer'  
+                    rel='noreferrer'
                     id='tweet-quote'
                   >
                     <FaTwitter />
@@ -168,7 +176,7 @@ const App = () => {
             <div className='controller'>
               <div>
                 <button id='new-quote' onClick={handleChange}>
-                  <span id='ctrl-btn-text'>Next</span>
+                  <span id='ctrl-btn-text'>Next Quote</span>
                 </button>
               </div>
             </div>
