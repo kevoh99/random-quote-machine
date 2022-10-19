@@ -60,20 +60,20 @@ body {
 
 /* Social media and controller button */
 .social-plus-controller {
-  /* background-color: green; To delete */
+  /* background-color: green; */
   padding: 5px 20px 5px 20px;
   margin: 3px;
   display: flex;
   justify-content: space-between;
 }
 
-.social {
+.social, .controller {
   display: flex;
 }
 
-.social div, .controller div {
+.social > div, .controller > div {
   padding: 0px; /* Alter to see clearly e.g. 3px; */
-  /* border: 1px solid orange; To delete */
+  /* border: 1px solid orange; */
 }
 
 /* Buttton elements */
@@ -81,23 +81,32 @@ body {
   display: inline-block;
   background: var(--primary-color);
   color: #fff;
-  padding: 0.7rem 1.5rem;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 1.2rem;
-  border-radius: 5px;
-  /* border: 1px solid red; To delete */
+  padding: 0;
+}
+
+#new-quote {
+  padding: 0.6rem 1rem;
+}
+
+/* Actual a tag */
+#tweet-quote {
+  display: inline-block;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.25rem;
 }
 
 #tweet-btn:hover, #new-quote:hover {
   border: none;
   outline: none;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
-#tweet-quote {
-  color: #fff;
-}
+
 /* Footer section */
 footer {
   font-size: 0.9rem;
@@ -114,18 +123,63 @@ footer a {
 /* Responsive design */
 @media screen and (max-width: 1025px) {
   .wrapper {
-    width: 70%;
+    width: 60%;
   }
 }
+
 @media screen and (max-width: 768px) {
   .wrapper {
     width: 80%;
   }
+  
+  #text {
+    padding: 10px;
+    margin: 1px;
+    font-size: 1.5rem;
+  } 
+  
+  #author {
+     font-size: 1.1rem;
+   }
+   
+   #tweet-quote {
+    font-size: 1.3rem;
+  }
+  
+  #new-quote {
+    padding: 0.6rem;
+    font-size: 1.2rem;
+  }
 }
+
 @media screen and (max-width: 480px) {
   .wrapper {
     width: 90%;
   }
+
+  #text {
+    padding: 0px;
+    margin: 1px;
+    font-size: 1.3rem;
+  }
+  
+  #author {
+    font-size: 1rem;
+  } 
+  
+  #tweet-quote {
+     font-size: 1.2rem;
+   }
+  
+  #new-quote {
+    padding: 0.6rem;
+    font-size: 1.1rem;
+  }
+  
+  footer {
+    font-size: 0.8rem;
+  }
+
 }
 
 @media screen and (max-width: 320px) {
@@ -133,23 +187,31 @@ footer a {
     width: 95%;
     text-align: center;
   }
+
   #quote-box {
     padding: 10px;
   }
+
   #text {
     padding: 0px;
     margin: 1px;
     font-size: 1.1rem;
   }
+
   #author {
     font-size: .9rem;
   }
-/* Buttton elements */
-  #tweet-btn,
-  #new-quote {
-    padding: 0.5rem 1rem;
+
+  #tweet-quote {
+    padding: 0.45rem 1rem;
     font-size: 1.1rem;
   }
+  
+  #new-quote {
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+
   footer {
     font-size: 0.8rem;
   }
