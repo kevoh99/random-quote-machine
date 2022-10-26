@@ -18,6 +18,15 @@ const COLORS = [
   '#7b61ff',
   '#2250f4',
   '#4f30d2',
+  '#c8f900',
+  '#032F59',
+  '#00a5ff',
+  '#e9580d',
+  '#ed7b0c',
+  '#f9b232',
+  '#002d5a',
+  '#006cbe',
+  '#323c45',
   '#2e0d77',
   '#151a1e',
   '#7d248e',
@@ -164,7 +173,7 @@ const App = () => {
     setCurrentColor(
       COLORS[Math.floor(Math.random() * COLORS.length)]
     )
-    /* Note that we are not making a call to the API using
+    /* Note that we are NOT making a call to the API using
     the getQuote function. This is because a change in
     currentColor triggers the useEffect, which in turn
     changes the --primary-color (for bg and text) and
