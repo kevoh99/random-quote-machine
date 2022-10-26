@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import fetch from 'cross-fetch'
-import { FaHeart, FaQuoteLeft, FaTwitter } from 'react-icons/fa'
 import './App.css'
+import Loading from './components/Loading'
+import Footer from './components/Footer'
+import Main from './components/Main'
 
 const COLORS = [
   'green',
@@ -175,7 +177,7 @@ const App = () => {
     )
     /* Note that we are NOT making a call to the API using
     the getQuote function. This is because a change in
-    currentColor triggers the useEffect, which in turn
+    currentColor triggers the useEffect hook, which in turn
     changes the --primary-color (for bg and text) and
     then makes a call to the getQuote function. */
   }
@@ -183,72 +185,15 @@ const App = () => {
   return isLoading ? (
     <div className='app'>
       <div className='wrapper'>
-        <div
-          id='quote-box'
-          style={{
-            minHeight: '150px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          Loading...
-        </div>
-        <footer>
-          Made with <FaHeart /> by{' '}
-          <a
-            href='https://twitter.com/kevinnjoroge'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Kevin Nganga
-          </a>
-        </footer>
+        <Loading />
+        <Footer />
       </div>
     </div>
   ) : (
     <div className='app'>
       <div className='wrapper'>
-        <div id='quote-box'>
-          <div id='text'>
-            <FaQuoteLeft aria-hidden='true' /> {' ' + quote}
-          </div>
-          <div id='author'>{author === null ? '- Unknown' : '- ' + author}</div>
-          <div className='social-plus-controller'>
-            <div className='social'>
-              <div>
-                <button id='tweet-btn'>
-                  <a
-                    href={'https://twitter.com/intent/tweet?hashtags=quotes&text="' + quote + '" ' + author}
-                    target='_blank'
-                    title='Tweet this quote'
-                    rel='noreferrer'
-                    id='tweet-quote'
-                  >
-                    <FaTwitter />
-                  </a>
-                </button>
-              </div>
-            </div>
-            <div className='controller'>
-              <div>
-                <button id='new-quote' onClick={handleChange}>
-                  <span id='ctrl-btn-text'>Next Quote</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <footer>
-          Made with <FaHeart /> by{' '}
-          <a
-            href='https://twitter.com/kevinnjoroge'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Kevin Nganga
-          </a>
-        </footer>
+        <Main quote={quote} author={author} handleChange={handleChange} />
+        <Footer />
       </div>
     </div>
   )
